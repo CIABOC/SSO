@@ -1,0 +1,683 @@
+/* =========================================================
+   CIABOC ACCOUNT
+   SHARED AUTHENTICATION THEME
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f1e8;
+    overflow-x: hidden;
+}
+
+#kc-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   REMOVE KEYCLOAK OUTER CARD
+   ========================================================= */
+
+.login-pf,
+.pf-v5-theme-dark,
+.pf-v5-c-login__main,
+.login-pf-page,
+.card-pf {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   MAIN AUTHENTICATION LAYOUT
+   ========================================================= */
+
+.ciaboc-login-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   LEFT BRAND PANEL
+   ========================================================= */
+
+.ciaboc-brand-panel {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: #14284b;
+    color: #ffffff;
+
+    padding: 70px 6.5%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.ciaboc-brand {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 560px;
+}
+
+
+/* =========================================================
+   CIABOC LOGO
+   ========================================================= */
+
+.ciaboc-brand-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.ciaboc-c-logo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #f5c928;
+    color: #14284b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   COMMISSION INFORMATION
+   ========================================================= */
+
+.ciaboc-commission {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 68px;
+
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.ciaboc-commission-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f5c928;
+    color: #14284b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GOLD LINE
+   ========================================================= */
+
+.ciaboc-gold-line {
+    width: 49px;
+    height: 2px;
+
+    background: #f5c928;
+
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   LEFT TITLE
+   ========================================================= */
+
+.ciaboc-brand h1 {
+    margin: 18px 0 8px;
+
+    font-size: 34px;
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.ciaboc-brand p {
+    margin: 0;
+
+    max-width: 430px;
+
+    font-size: 16px;
+    line-height: 1.55;
+
+    color: rgba(255,255,255,0.88);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+.ciaboc-circle {
+    position: absolute;
+
+    border: 1px solid rgba(255,255,255,0.38);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.ciaboc-circle-top {
+    width: 260px;
+    height: 260px;
+
+    top: -200px;
+    right: -120px;
+}
+
+.ciaboc-circle-bottom {
+    width: 330px;
+    height: 330px;
+
+    bottom: -220px;
+    left: -170px;
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+   ========================================================= */
+
+.ciaboc-login-panel {
+    min-height: 100vh;
+
+    background: #f5f1e8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 36px 7%;
+}
+
+
+/* =========================================================
+   AUTHENTICATION CARD
+   ========================================================= */
+
+.ciaboc-login-card {
+    width: 100%;
+    max-width: 580px;
+
+    background: #ffffff;
+
+    border-radius: 19px;
+
+    padding: 32px 48px 38px;
+
+    box-shadow:
+            0 12px 40px rgba(20, 40, 75, 0.10);
+}
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+.ciaboc-language {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.ciaboc-language button {
+    height: 40px;
+
+    padding: 0 14px;
+
+    border: 1px solid #ddd6c8;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #14284b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.ciaboc-language button.active {
+    background: #14284b;
+
+    color: #ffffff;
+
+    border-color: #14284b;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.ciaboc-form-group {
+    margin-bottom: 20px;
+}
+
+.ciaboc-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #14284b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.ciaboc-form-group input {
+    width: 100%;
+    height: 54px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 9px;
+
+    background: #edf3fc;
+
+    color: #14284b;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.ciaboc-form-group input:focus {
+    border-color: #f5c928;
+
+    box-shadow:
+            0 0 0 2px rgba(245,201,40,0.20);
+}
+
+
+/* =========================================================
+   PASSWORD
+   ========================================================= */
+
+.ciaboc-password {
+    position: relative;
+}
+
+.ciaboc-password input {
+    padding-right: 58px;
+}
+
+.ciaboc-eye {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 54px;
+    height: 54px;
+
+    border: 0;
+    border-left: 1px solid #d8d8d8;
+
+    background: #ffffff;
+
+    border-radius: 0 9px 9px 0;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.ciaboc-forgot {
+    text-align: right;
+
+    margin-top: -2px;
+    margin-bottom: 22px;
+}
+
+.ciaboc-forgot a {
+    color: #14284b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.ciaboc-form-buttons input {
+    width: 100%;
+    height: 54px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #f5c928;
+
+    color: #14284b;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.ciaboc-form-buttons input:hover {
+    background: #e9bd19;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.ciaboc-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 27px 0;
+
+    color: #8a8a8a;
+
+    font-size: 13px;
+}
+
+.ciaboc-divider::before,
+.ciaboc-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddd8ce;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.ciaboc-social {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.ciaboc-social-button {
+    width: 100%;
+    min-height: 50px;
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #14284b;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.social-icon {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.ciaboc-register {
+    margin-top: 24px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.ciaboc-register a {
+    color: #14284b;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .ciaboc-login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .ciaboc-brand-panel {
+        min-height: 400px;
+
+        padding: 50px 8%;
+    }
+
+    .ciaboc-login-panel {
+        min-height: auto;
+
+        padding: 40px 20px;
+    }
+
+    .ciaboc-login-card {
+        max-width: 600px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .ciaboc-brand-panel {
+        padding: 35px 25px;
+    }
+
+    .ciaboc-brand-logo {
+        font-size: 24px;
+    }
+
+    .ciaboc-brand h1 {
+        font-size: 29px;
+    }
+
+    .ciaboc-login-panel {
+        padding: 20px 14px;
+    }
+
+    .ciaboc-login-card {
+        padding: 28px 22px 32px;
+
+        border-radius: 15px;
+    }
+}
+/* =========================================================
+   FINAL KEYCLOAK V2 OVERRIDE
+   FORCE CIABOC UI TO USE THE ENTIRE VIEWPORT
+   ========================================================= */
+
+/* Remove Keycloak's outer layout constraints */
+
+#kc-container,
+#kc-content,
+#kc-content-wrapper,
+#kc-form,
+#kc-form-wrapper,
+.pf-v5-c-login,
+.pf-v5-c-login__main,
+.pf-v5-c-login__main-header,
+.pf-v5-c-login__main-body,
+.pf-v5-c-login__main-footer,
+.login-pf-page,
+.login-pf-page-header,
+.login-pf-page-footer {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* Hide Keycloak's own header/footer */
+
+.pf-v5-c-login__main-header,
+.pf-v5-c-login__main-footer,
+.login-pf-page-header,
+.login-pf-page-footer,
+#kc-header {
+    display: none !important;
+}
+
+
+/* Make our CIABOC screen independent of the
+   Keycloak parent container */
+
+.ciaboc-login-page {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns: 50vw 50vw !important;
+
+    overflow: hidden !important;
+
+    z-index: 99999 !important;
+}
+
+
+/* Make both sides exactly half the viewport */
+
+.ciaboc-brand-panel {
+    width: 50vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+}
+
+
+.ciaboc-login-panel {
+    width: 50vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+}
+
+
+/* Prevent Keycloak from shrinking the login card */
+
+.ciaboc-login-card {
+    width: 100% !important;
+    max-width: 580px !important;
+    flex-shrink: 0 !important;
+}
