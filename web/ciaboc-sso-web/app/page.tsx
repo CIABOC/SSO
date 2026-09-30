@@ -5,11 +5,19 @@ import { useState } from "react";
 import LoginScreen from "@/src/screens/LoginScreen";
 import LoginFailedScreen from "@/src/screens/LoginFailedScreen";
 import SignUpScreen from "@/src/screens/SignUpScreen";
+import OTPVerificationScreen from "@/src/screens/OTPVerificationScreen";
+import VerificationFailedScreen from "@/src/screens/VerificationFailedScreen";
+import ForgotPasswordScreen from "@/src/screens/ForgotPasswordScreen";
+import SuccessScreen from "@/src/screens/SuccessScreen";
 
 type Screen =
     | "login"
     | "loginFailed"
-    | "signUp";
+    | "signUp"
+    | "otp"
+    | "verificationFailed"
+    | "forgotPassword"
+    | "success";
 
 export default function Home() {
 
@@ -17,9 +25,31 @@ export default function Home() {
         useState<Screen>("login");
 
 
-    /* ================================
+    /* =================================
        LOGIN FAILED
     ================================= */
+    /* =================================
+       SUCCESS
+    ================================= */
+
+    if (screen === "success") {
+
+        return (
+            <SuccessScreen
+
+                onDashboard={() => {
+                    console.log(
+                        "Dashboard selected"
+                    );
+                }}
+
+                onLogout={() =>
+                    setScreen("login")
+                }
+
+            />
+        );
+    }
 
     if (screen === "loginFailed") {
 
@@ -33,7 +63,7 @@ export default function Home() {
     }
 
 
-    /* ================================
+    /* =================================
        SIGN UP
     ================================= */
 
@@ -41,26 +71,97 @@ export default function Home() {
 
         return (
             <SignUpScreen
+
                 onSignIn={() =>
                     setScreen("login")
                 }
 
-                onContinue={() => {
-                    console.log(
-                        "Continue to OTP verification"
-                    );
-                }}
+                onContinue={() =>
+                    setScreen("otp")
+                }
+
             />
         );
     }
 
 
-    /* ================================
+    /* =================================
+       OTP VERIFICATION
+    ================================= */
+
+    if (screen === "otp") {
+        return (
+            <OTPVerificationScreen
+                onVerify={() =>
+                    setScreen("success")
+                }
+
+                onBack={() =>
+                    setScreen("signUp")
+                }
+
+            />
+        );
+    }
+
+
+    /* =================================
+       VERIFICATION FAILED
+    ================================= */
+
+    if (
+        screen ===
+        "verificationFailed"
+    ) {
+
+        return (
+            <VerificationFailedScreen
+
+                onTryAgain={() =>
+                    setScreen("otp")
+                }
+
+                onResend={() =>
+                    setScreen("otp")
+                }
+
+            />
+        );
+    }
+
+
+    /* =================================
+       FORGOT PASSWORD
+    ================================= */
+
+    if (
+        screen ===
+        "forgotPassword"
+    ) {
+
+        return (
+            <ForgotPasswordScreen
+
+                onBackToLogin={() =>
+                    setScreen("login")
+                }
+
+                onSendCode={() =>
+                    setScreen("otp")
+                }
+
+            />
+        );
+    }
+
+
+    /* =================================
        LOGIN
     ================================= */
 
     return (
         <LoginScreen
+
             onLoginFailed={() =>
                 setScreen("loginFailed")
             }
@@ -68,6 +169,10 @@ export default function Home() {
             onSignUp={() =>
                 setScreen("signUp")
             }
+            onForgotPassword={() =>
+                setScreen("forgotPassword")
+            }
+
         />
     );
 }

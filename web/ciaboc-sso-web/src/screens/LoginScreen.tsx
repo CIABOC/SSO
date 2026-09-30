@@ -11,11 +11,13 @@ import { colors } from "@/src/styles/theme";
 interface LoginScreenProps {
     onLoginFailed: () => void;
     onSignUp: () => void;
+    onForgotPassword: () => void;
 }
 
 export default function LoginScreen({
                                         onLoginFailed,
                                         onSignUp,
+                                        onForgotPassword,
                                     }: LoginScreenProps) {
 
     const [showPassword, setShowPassword] =
@@ -151,6 +153,7 @@ export default function LoginScreen({
                     >
                         <button
                             type="button"
+                            onClick={onForgotPassword}
                             style={linkButton}
                         >
                             Forgot password?
