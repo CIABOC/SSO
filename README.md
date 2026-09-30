@@ -1,1 +1,1 @@
-# SSO
+# CCIABOC-SSo project
