@@ -1,4 +1,0 @@
-<<<<<<< HEAD
-# CCIABOC-SSO project
-=======
-
